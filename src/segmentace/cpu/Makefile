@@ -9,4 +9,4 @@ program: program.c cpu.c cpu.h common.h
 
 
 clean:
-	rm -rf program program.exe gmon.out
+	rm -rfv program program.exe gmon.out
