@@ -24,13 +24,13 @@ unsigned long global_time=0;
  Vystupy:
     hodnota vypocteneho prahu
 ***************************************************************************/
-int otsu(int *hist, int n) {
+int otsu(unsigned long long int *hist, int n) {
 
    int   total = 0;
    float sum = 0;
    float sumB = 0, varMax = 0, varBetween;
    int   wB = 0,  wF = 0, threshold = 0;
-   float mB, mF;  
+   float mB, mF;
    int   t;
 
    for (t=0 ; t<n ; t++) {
@@ -133,7 +133,7 @@ void buffer(t_pixel_sw din, int c, t_pixel_sw *col_window){
    ow    upravene hodnoty posuvneho okenka 3x3 po osetreni krajnich hodnot
 ***************************************************************************/
 void clip_window(int r, int c, t_pixel_sw *iw, t_pixel_sw *ow) {
-   
+
    int first_row, last_row, first_col, last_col;
    int test1, test2, test3, test4;
 
@@ -186,7 +186,7 @@ void clip_window(int r, int c, t_pixel_sw *iw, t_pixel_sw *ow) {
 
  Vstupy:
    window      puvodni hodnoty posuvneho okenka 3x3
-   col_window  nove nasouvany sloupec  
+   col_window  nove nasouvany sloupec
  Vystupy:
    window      hodnoty vstupniho pole jsou aktualizovany
 ***************************************************************************/
@@ -218,7 +218,7 @@ void shift_window(t_pixel_sw *window, t_pixel_sw *col_window) {
    cliped_window  posuvne okenko 3x3 po osetreni okrajovych bodu
    last_pixel     infomace o tom, zda se jedna o posledni pixel snimku
    navratova hodnota ukazu, zda je okenko platne ci nikoliv. Okenko nemusi
-   byt platne napr. na zacatku zpracovani, kdy jeste neni v bufferu nasunut 
+   byt platne napr. na zacatku zpracovani, kdy jeste neni v bufferu nasunut
    dostatek novych pixelu
 ***************************************************************************/
 int system_input(t_pixel_sw din, t_pixel_sw *cliped_window, int *last_pixel){
@@ -252,7 +252,7 @@ int system_input(t_pixel_sw din, t_pixel_sw *cliped_window, int *last_pixel){
       c = 0;
       r = (r == FRAME_ROWS-1) ? 0 : r+1;
    }
-   else  
+   else
       c++;
 
    return output_vld;
@@ -265,7 +265,7 @@ int system_input(t_pixel_sw din, t_pixel_sw *cliped_window, int *last_pixel){
  Vstupy:
    hist     adresa histogramu
 ***************************************************************************/
-void histogram_clean(unsigned long long *hist) {
+void histogram_clean(unsigned long long int *hist) {
 
    int i;
 
@@ -300,7 +300,7 @@ t_pixel_sw thresholding(t_pixel_sw pixel, int threshold) {
    hist        adresa histogramu
    n           pocet polozek histogramu
 ***************************************************************************/
-void print_results(int frame, int threshold, unsigned long long *hist, int n) {
+void print_results(int frame, int threshold, unsigned long long int *hist, int n) {
 
    int i;
 
@@ -347,7 +347,7 @@ void print_results(int frame, int threshold, unsigned long long *hist, int n) {
 ***************************************************************************/
 void pixel_processing(t_pixel_sw data_in, t_pixel_sw *data_out, int *data_out_vld) {
 
-   static unsigned long long histogram[PIXELS] = {0, 0, 0, 0, 0, 0, 0, 0};
+   static unsigned long long int histogram[PIXELS] = {0, 0, 0, 0, 0, 0, 0, 0};
    static int  threshold = 4, new_threshold = 4;
    static int  frame=100;
    t_pixel_sw  pix_filtered, window[9];
@@ -390,7 +390,7 @@ void global_time_update() {
 
    static unsigned long act_time, prev_time = 0;
 
-   CCTL0 &= ~CCIE;  // disable interrupt               
+   CCTL0 &= ~CCIE;  // disable interrupt
 
    act_time = TAR;
 
@@ -401,7 +401,7 @@ void global_time_update() {
 
    prev_time = act_time;
 
-   CCTL0 = CCIE;  // enable interrupt               
+   CCTL0 = CCIE;  // enable interrupt
 }
 
 /*******************************************************************************
@@ -474,7 +474,7 @@ void update_base_pos(unsigned int *base_r, unsigned int *base_c) {
 
  Vstupy
    frame_inc   pocet sminku, o ktere se ma generator pixelu posunout vpred.
-               Pouze pro ucely simulace algoritmu na mikrokontroleru, ktery 
+               Pouze pro ucely simulace algoritmu na mikrokontroleru, ktery
                ma nizky vypocetni vykon.
 
  Vystupy:
@@ -485,7 +485,7 @@ t_pixel_sw gen_pixel(unsigned int frame_inc) {
    static unsigned int        r=0, c=0, base_r=100, base_c=100;
    static unsigned int        noise_cnt = 0, frame_cnt = 0;
    t_pixel_sw                 pixel_int, noise_pix, diff, diff_pix;
-   unsigned int               diff_r, diff_c, i; 
+   unsigned int               diff_r, diff_c, i;
    unsigned long              noise_inc;
 
    /* posun generatoru o nekolik smimku vpred */
@@ -551,7 +551,7 @@ int main(void)
    set_led_d5(1);  //rozsvitit LED D5
 
    /* nastaveni casovace na periodu 10 ms */
-   CCTL0 = CCIE;  // enable interrupt               
+   CCTL0 = CCIE;  // enable interrupt
    CCR0 = 0x80;
    TACTL = TASSEL_1 + MC_2;
 
@@ -564,15 +564,15 @@ int main(void)
    t_pixel_sw  pix_input, pix_output;
    int         pix_output_vld;
 
-   gen_pixel(99);
+   gen_pixel(99); // shift to 99th frame
    for (f = 0; f < FRAMES; f+=100) {
       for (r = 0; r < FRAME_ROWS; r++) {
          for (c = 0; c < FRAME_COLS; c++) {
-            pix_input = gen_pixel(0);
+            pix_input = gen_pixel(0); // get f-th frame (first=100th, other=100+f)
             pixel_processing(pix_input, &pix_output, &pix_output_vld);
          }
       }
-      gen_pixel(99);
+      gen_pixel(99); // shift by 99 frame
    }
 
 
@@ -586,7 +586,7 @@ int main(void)
    term_send_num((long)(((float)(end_time-start_time))*TIMER_TICK));
    term_send_crlf();
 #endif
-   
+
    CCTL0 &= ~CCIE;  // disable interrupt
    /**************************************************************************/
 

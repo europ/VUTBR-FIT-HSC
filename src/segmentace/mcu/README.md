@@ -14,7 +14,7 @@ Histogram: 72708, 0, 0, 0, 0, 960, 832, 2300
 Threshold: 1
 Frame: 400
 Histogram: 72708, 960, 832, 704, 576, 448, 320, 252
-Threshold: 2
+Threshold: 3
 Frame: 500
 Histogram: 72708, 0, 0, 0, 0, 0, 960, 3132
 Threshold: 1
