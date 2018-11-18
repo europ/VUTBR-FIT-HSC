@@ -2,7 +2,7 @@
 #include "common.h"
 #include "cpu.h"
 
-/* #define PROFILE */
+#define PROFILE
 
 const int img_size[4] = {8,16,32,64};
 const int prime_num[16] = {919, 929, 937, 941, 947, 953, 967, 971,\
@@ -23,7 +23,7 @@ int otsu(int *hist, int n) {
    float sum = 0;
    float sumB = 0, varMax = 0, varBetween;
    int   wB = 0,  wF = 0, threshold = 0;
-   float mB, mF;  
+   float mB, mF;
    int   t;
 
    for (t=0 ; t<n ; t++) {
@@ -126,7 +126,7 @@ void buffer(t_pixel_sw din, int c, t_pixel_sw *col_window){
    ow    upravene hodnoty posuvneho okenka 3x3 po osetreni krajnich hodnot
 ***************************************************************************/
 void clip_window(int r, int c, t_pixel_sw *iw, t_pixel_sw *ow) {
-   
+
    int first_row, last_row, first_col, last_col;
    int test1, test2, test3, test4;
 
@@ -179,7 +179,7 @@ void clip_window(int r, int c, t_pixel_sw *iw, t_pixel_sw *ow) {
 
  Vstupy:
    window      puvodni hodnoty posuvneho okenka 3x3
-   col_window  nove nasouvany sloupec  
+   col_window  nove nasouvany sloupec
  Vystupy:
    window      hodnoty vstupniho pole jsou aktualizovany
 ***************************************************************************/
@@ -211,7 +211,7 @@ void shift_window(t_pixel_sw *window, t_pixel_sw *col_window) {
    cliped_window  posuvne okenko 3x3 po osetreni okrajovych bodu
    last_pixel     infomace o tom, zda se jedna o posledni pixel snimku
    navratova hodnota ukazu, zda je okenko platne ci nikoliv. Okenko nemusi
-   byt platne napr. na zacatku zpracovani, kdy jeste neni v bufferu nasunut 
+   byt platne napr. na zacatku zpracovani, kdy jeste neni v bufferu nasunut
    dostatek novych pixelu
 ***************************************************************************/
 int system_input(t_pixel_sw din, t_pixel_sw *cliped_window, int *last_pixel){
@@ -245,7 +245,7 @@ int system_input(t_pixel_sw din, t_pixel_sw *cliped_window, int *last_pixel){
       c = 0;
       r = (r == FRAME_ROWS-1) ? 0 : r+1;
    }
-   else  
+   else
       c++;
 
    return output_vld;
@@ -288,7 +288,7 @@ t_pixel_sw gen_pixel() {
    static unsigned int        r=0, c=0, base_r=100, base_c=100;
    static unsigned int        noise_cnt = 0, frame_cnt = 0;
    t_pixel_sw                 pixel_int, noise_pix, diff, diff_pix;
-   unsigned int               diff_r, diff_c; 
+   unsigned int               diff_r, diff_c;
 
    /* vypocet rozdilu aktualni pozice vuci bazove pozici */
    diff_r = r - base_r;
@@ -326,7 +326,7 @@ t_pixel_sw gen_pixel() {
 
    /* citac sumu */
    noise_cnt =  (noise_cnt == NOISE_INTERVAL-1) ? 0 : noise_cnt+1;
-      
+
    return pixel_int;
 }
 
@@ -380,7 +380,7 @@ void print_results(int frame, int threshold, int *hist, int n) {
    printf("Frame: %d\n", frame);
    printf("Histogram: ");
    printf("%d",hist[0]);
-   for(i=1; i<n; i++) 
+   for(i=1; i<n; i++)
       printf(", %d",hist[i]);
    printf("\n");
    printf("Threshold: %d\n", threshold);

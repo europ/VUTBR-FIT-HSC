@@ -13,5 +13,10 @@ lscpu > lscpu.out
 ### output
 
 * [program.out](https://github.com/europ/VUTBR-FIT-HSC/blob/master/src/segmentace/cpu/program.out)
-* [gprof.out](https://github.com/europ/VUTBR-FIT-HSC/blob/master/src/segmentace/cpu/gprof.out)
 * [lscpu.out](https://github.com/europ/VUTBR-FIT-HSC/blob/master/src/segmentace/cpu/lscpu.out)
+
+### profiling
+
+```sh
+./profile.sh
+```

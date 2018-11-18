@@ -1,0 +1,4 @@
+program
+gmon.out
+gmon.sum
+gprof/
