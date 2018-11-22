@@ -1,7 +1,7 @@
 #include <fitkitlib.h>
 #include "../cpu/common.h"
 
-//#define PROFILE
+#define PROFILE
 
 const int img_size[4] = {8,16,32,64};
 const int prime_num[16] = {919, 929, 937, 941, 947, 953, 967, 971, \
@@ -544,7 +544,10 @@ t_pixel_sw gen_pixel(unsigned int frame_inc) {
 int main(void)
 {
    short counter = 0;
-   unsigned long start_time, end_time;
+
+   #ifdef PROFILE
+      unsigned long start_time, end_time;
+   #endif
 
    initialize_hardware();
    set_led_d6(1);  //rozsvitit LED D6
@@ -564,28 +567,31 @@ int main(void)
    t_pixel_sw  pix_input, pix_output;
    int         pix_output_vld;
 
-   gen_pixel(99); // shift to 99th frame
+   gen_pixel(99);
    for (f = 0; f < FRAMES; f+=100) {
       for (r = 0; r < FRAME_ROWS; r++) {
          for (c = 0; c < FRAME_COLS; c++) {
-            pix_input = gen_pixel(0); // get f-th frame (first=100th, other=100+f)
+            pix_input = gen_pixel(0);
+
+            #ifdef PROFILE
+               start_time = get_time();
+            #endif
+
             pixel_processing(pix_input, &pix_output, &pix_output_vld);
+
+            #ifdef PROFILE
+               end_time = get_time();
+            #endif
          }
       }
-      gen_pixel(99); // shift by 99 frame
+      gen_pixel(99);
    }
 
-
-#ifdef PROFILE
-   // Demo priklad pro mereni casu
-   start_time = get_time();
-   delay_ms(100);
-   end_time = get_time();
-
-   term_send_str("Time diff (us): ");
-   term_send_num((long)(((float)(end_time-start_time))*TIMER_TICK));
-   term_send_crlf();
-#endif
+   #ifdef PROFILE
+      term_send_str("Time diff (us): ");
+      term_send_num((long)(((float)(end_time-start_time))*TIMER_TICK));
+      term_send_crlf();
+   #endif
 
    CCTL0 &= ~CCIE;  // disable interrupt
    /**************************************************************************/

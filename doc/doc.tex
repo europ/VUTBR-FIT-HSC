@@ -76,7 +76,7 @@
 \setlength{\parskip}{0pt}
 
 \newpage
-\section{Profilovanie}
+\section{Profilovanie CPU}
 
 Profilovanie CPU časti projektu bolo vykonané pomocou programu \textit{GNU gprof}\footnote{\href{https://sourceware.org/binutils/docs/gprof/}{sourceware.org/binutils/docs/gprof}} verzie \textit{2.26.1}. Desať profilovacích výsledkov bolo nameraných pomocou \textit{návodu z dokumentácie}\footnote{\href{https://sourceware.org/binutils/docs/gprof/Sampling-Error.html}{sourceware.org/binutils/docs/gprof/Sampling-Error.html}} na základe čoho bol vo výsledku jeden sumárny výpis profilovacích hodnôt (priemer desiatich profilovaní).\\
 
@@ -112,7 +112,21 @@ Profilovanie CPU časti projektu bolo vykonané pomocou programu \textit{GNU gpr
 \end{figure}
 
 \newpage
-\section{FPGA}
+\section{Profilovanie MCU}
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{r|l}
+        \multicolumn{1}{c|}{\textbf{Spracovaná časť}} & \multicolumn{1}{c}{\textbf{Čas spracovania}}\\
+        \hline
+        pixel & $183 \ \mu s$\\
+        rámec & $14.0544 \ s$\\
+    \end{tabular}
+    \caption{Spracovanie určitých častí a ich trvanie.}
+    \label{tab:process}
+  \end{center}
+\end{table}
+
 
 %\newpage
 %\section{Literatúra}
