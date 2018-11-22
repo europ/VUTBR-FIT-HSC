@@ -76,15 +76,49 @@
 \setlength{\parskip}{0pt}
 
 \newpage
-\section{Kapitola A}
+\section{Profilovanie}
 
-Text v kapitole A~\cite{X}.
+Profilovanie CPU časti projektu bolo vykonané pomocou programu \textit{GNU gprof}\footnote{\href{https://sourceware.org/binutils/docs/gprof/}{sourceware.org/binutils/docs/gprof}} verzie \textit{2.26.1}. Desať profilovacích výsledkov bolo nameraných pomocou \textit{návodu z dokumentácie}\footnote{\href{https://sourceware.org/binutils/docs/gprof/Sampling-Error.html}{sourceware.org/binutils/docs/gprof/Sampling-Error.html}} na základe čoho bol vo výsledku jeden sumárny výpis profilovacích hodnôt (priemer desiatich profilovaní).\\
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{l|c}
+        \multicolumn{1}{c|}{\textbf{Názov}} & \multicolumn{1}{c}{\textbf{Percento času}}\\
+        \hline
+        \textit{median}            & 63.71 \\
+        \textit{gen\_pixel}        & 10.20 \\
+        \textit{clip\_window}      & 8.19  \\
+        \textit{shift\_window}     & 5.23  \\
+        \textit{pixel\_processing} & 4.50  \\
+        \textit{buffer}            & 3.42  \\
+        \textit{system\_input}     & 2.91  \\
+        \textit{main}              & 0.97  \\
+        \textit{thresholding}      & 0.63  \\
+        \textit{print\_results}    & 0.32  \\
+        \textit{otsu}              & 0.06  \\
+        \textit{update\_base\_pos} & 0.04  \\
+        \textit{histogram\_clean}  & 0.00  \\
+    \end{tabular}
+    \caption{Výsledky desiatich profilovaní pomocou \textit{gprof}.}
+    \label{tab:gprof}
+  \end{center}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{graph.eps}
+    \caption{Graf zobrazujúci namerané hodnoty z tabuľky \ref{tab:gprof}.}
+    \label{fig:graf}
+\end{figure}
 
 \newpage
-\section{Literatúra}
-\bibliographystyle{slovakiso}
-\begin{flushleft}
-    \bibliography{quotation}
-\end{flushleft}
+\section{FPGA}
+
+%\newpage
+%\section{Literatúra}
+%\bibliographystyle{slovakiso}
+%\begin{flushleft}
+%    \bibliography{quotation}
+%\end{flushleft}
 
 \end{document}
