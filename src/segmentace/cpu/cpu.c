@@ -373,6 +373,7 @@ t_pixel_sw thresholding(t_pixel_sw pixel, int threshold) {
    hist        adresa histogramu
    n           pocet polozek histogramu
 ***************************************************************************/
+#ifndef PROFILE
 void print_results(int frame, int threshold, int *hist, int n) {
 
    int i;
@@ -385,6 +386,7 @@ void print_results(int frame, int threshold, int *hist, int n) {
    printf("\n");
    printf("Threshold: %d\n", threshold);
 }
+#endif
 
 /***************************************************************************
  Procedura pixel_processing() zajistuje kompletni zpracovani vstupniho

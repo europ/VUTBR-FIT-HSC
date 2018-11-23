@@ -3,16 +3,15 @@ Flat profile:
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  us/call  us/call  name    
- 68.15      3.67     3.67 38476479     0.10     0.10  median
- 10.52      4.23     0.57 38476800     0.01     0.01  gen_pixel
-  7.73      4.65     0.42 38476800     0.01     0.01  clip_window
-  3.91      4.86     0.21 38476800     0.01     0.01  shift_window
-  3.17      5.03     0.17 38476800     0.00     0.12  pixel_processing
-  2.70      5.17     0.15 38476800     0.00     0.00  buffer
-  2.23      5.29     0.12 38476800     0.00     0.02  system_input
-  0.74      5.33     0.04                             main
-  0.56      5.36     0.03 38476479     0.00     0.00  thresholding
-  0.37      5.38     0.02                             print_results
-  0.09      5.39     0.01      501    10.00    10.00  update_base_pos
-  0.00      5.39     0.00       50     0.00     0.00  histogram_clean
-  0.00      5.39     0.00       50     0.00     0.00  otsu
+ 61.85      3.11     3.11 38476479     0.08     0.08  median
+ 10.86      3.66     0.55 38476800     0.01     0.01  gen_pixel
+  8.76      4.10     0.44 38476800     0.01     0.01  clip_window
+  5.18      4.36     0.26 38476800     0.01     0.01  shift_window
+  3.68      4.54     0.19 38476800     0.00     0.00  buffer
+  3.68      4.73     0.19 38476800     0.00     0.03  system_input
+  2.69      4.86     0.14 38476800     0.00     0.12  pixel_processing
+  1.89      4.96     0.10 38476479     0.00     0.00  thresholding
+  0.60      4.99     0.03                             main
+  0.40      5.01     0.02       50   400.75   400.75  otsu
+  0.10      5.01     0.01      501    10.00    10.00  update_base_pos
+  0.00      5.01     0.00       50     0.00     0.00  histogram_clean
