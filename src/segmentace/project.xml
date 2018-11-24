@@ -14,7 +14,7 @@
 
     <!--  MCU part -->
     <mcu>
-        <file>main_sw.c</file>
+        <file>main_swhw.c</file>
     </mcu>
 
     <!-- FPGA part -->
