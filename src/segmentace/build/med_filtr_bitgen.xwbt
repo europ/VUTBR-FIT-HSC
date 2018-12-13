@@ -1,0 +1,7 @@
+INFILE=C:\Fitkit\apps\vga\segmentace\build\fpga\med_filtr.par.ncd
+OUTFILE=C:\Fitkit\apps\vga\segmentace\build\med_filtr.bit
+FAMILY=Spartan3
+PART=xc3s50-4pq208
+WORKINGDIR=C:\Fitkit\apps\vga\segmentace\build
+LICENSE=WebPack
+USER_INFO=211426446_0_0_978
