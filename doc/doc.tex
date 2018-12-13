@@ -76,7 +76,7 @@
 \setlength{\parskip}{0pt}
 
 \newpage
-\section{Profilovanie CPU}
+\section{CPU}
 
 Profilovanie CPU časti projektu bolo vykonané pomocou programu \textit{GNU gprof}\footnote{\href{https://sourceware.org/binutils/docs/gprof/}{sourceware.org/binutils/docs/gprof}} verzie \textit{2.26.1}. Desať profilovacích výsledkov bolo nameraných pomocou \textit{návodu z dokumentácie}\footnote{\href{https://sourceware.org/binutils/docs/gprof/Sampling-Error.html}{sourceware.org/binutils/docs/gprof/Sampling-Error.html}} na základe čoho bol vo výsledku jeden sumárny výpis profilovacích hodnôt (priemer desiatich profilovaní).\\
 
@@ -111,7 +111,7 @@ Profilovanie CPU časti projektu bolo vykonané pomocou programu \textit{GNU gpr
 \end{figure}
 
 \newpage
-\section{Profilovanie MCU}
+\section{MCU}
 
 \begin{table}[H]
   \begin{center}
@@ -123,6 +123,30 @@ Profilovanie CPU časti projektu bolo vykonané pomocou programu \textit{GNU gpr
     \end{tabular}
     \caption{Spracovanie určitých častí a ich trvanie.}
     \label{tab:process}
+  \end{center}
+\end{table}
+
+\section{FPGA}
+
+Vlastnosti komponenty pre filtráciu a segmentáciu obrazu:
+
+\begin{itemize}
+    \item V jadre modulu pre \textit{filter} je \textit{main} zreťazený (pipeline enabled) s inicializačným intervalom~4
+    \item Cyklus označený ako \textit{Linit} je rozbalený (unroll enabled)
+    \item Cyklus označený ako \textit{L2} je rozbalený (unroll enabled)
+    \item Cyklus označený ako \textit{L1a} je rozbalený (unroll enabled)
+    \item Cyklus označený ako \textit{L1b} je rozbalený (unroll enabled)
+\end{itemize}
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{l|l}
+        Number of Slice Flip Flops & 492 \hspace{1.65mm} out of 1,536 32\% \\
+        Number of 4 input LUTs     & 1,178 out of 1,536 76\% \\
+        Number of occupied Slices  & 766 \hspace{1.65mm} out of 768 99\%   \\
+    \end{tabular}
+    \caption{Množstvo spotrebovaných zdrojov FPGA čipu.}
+    \label{tab:fpga_resources}
   \end{center}
 \end{table}
 
