@@ -1,4 +1,5 @@
 #include <fitkitlib.h>
+#include "../cpu/common.h"
 #include "../fpga/src_filter/addr_space.h"
 
 /*******************************************************************************
@@ -98,21 +99,6 @@ int otsu(unsigned long long int *hist, int n) {
 }
 
 /***************************************************************************
- Procedura histogram_clean() zajistuje vymazani histogramu, ktery je potreba
- zejmena na konci zpracovani kazdeho snimku.
-
- Vstupy:
-   hist     adresa histogramu
-***************************************************************************/
-void histogram_clean(unsigned long long int *hist) {
-
-   int i;
-
-   for(i=0; i<PIXELS; i++)
-      hist[i] = 0;
-}
-
-/***************************************************************************
  Pomocna procedura pro tisk vysledku
 
  Vstupy:
@@ -171,34 +157,45 @@ int main(void)
    fpga_write(FPGA_MCU_READY, mcu_ready);
    while(fpga_read(FPGA_MCU_READY) != 2);
 
+   // MY CODE BEGIN =============================
+
    int threshold = 4;
-   unsigned int frame_current;
-   unsigned int frame_previous;
+
+   unsigned int i = 0;
+   unsigned int frame_current = 0;
+   unsigned int frame_previous = 0;
    unsigned long long int histogram[PIXELS] = {0, 0, 0, 0, 0, 0, 0, 0};
 
-   frame_previous = 0;
    while(frame_current <= FRAMES) {
 
       frame_current = fpga_read(FPGA_FRAME_CNT); // get current processed frame number
 
       if ( (frame_current != frame_previous) && (frame_current % 10 == 0) ) { // frames evalulation (new frame && each 10th frame)
 
-         frame_previous = frame_current; // save previous processed frame
+         frame_previous = frame_current; // save current processed frame
 
-         for(unsigned int i=0; i<PIXELS; i++) {
+         // remap FPGA histogram values to MCU histogram for further processing
+         for(i=0; i<PIXELS; i++) {
             histogram[i] = fpga_read(FPGA_HISTOGRAM + i); // save histogram values
          }
 
-         histogram_clean(); // clear histogram values
+         threshold = otsu(histogram, PIXELS); // calculate threshold via otsu based on histogram
+         fpga_write(FPGA_THRESHOLD, threshold); // return to FPGA calculated threshold via otsu function in MCU
 
-         threshold = otsu(histogram, PIXELS); // calculate otsu based on histogram
-         fpga_write(FPGA_TRESHOLD, treshold); // return to fpga calculated otsu
+         // results printing
+         if (frame_current % 100 == 0) { // print results for each 100th frame
+            print_results(frame_current, threshold, histogram, PIXELS); // print results
+         }
 
-         if ( !(frame_current % 100) ) { // print results for each 100th frame
-            print_results(frame_current, treshold, histogram, PIXELS); // print results
+         // histogram clearing
+         for(i=0; i<PIXELS; i++) {
+            histogram[i] = 0; // clear MCU histogram
+            fpga_write(FPGA_HISTOGRAM + i, 0); // clear FPGA histogram
          }
       }
    }
+
+   // MY CODE END ===============================
 
    //term_send_str("Both FPGA and MCU are ready.");
    //term_send_crlf();

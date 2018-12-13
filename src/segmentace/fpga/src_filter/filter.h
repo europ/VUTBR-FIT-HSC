@@ -4,7 +4,7 @@
 #include <ac_int.h>
 #include "../../cpu/common.h"
 
-#define MCU_SIZE        512
+#define MCU_SIZE 512
 
 typedef ac_int<PIXEL_WIDTH,false> t_pixel;
 typedef ac_int<32,false> t_mcu_data;

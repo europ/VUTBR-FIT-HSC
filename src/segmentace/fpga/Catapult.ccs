@@ -1,0 +1,23 @@
+//  Catapult University Version 10.0c/745553 (Production Release) Wed Oct 11 16:38:17 PDT 2017
+//  
+//  Copyright (c) Mentor Graphics Corporation, 1996-2017, All Rights Reserved.
+//                       UNPUBLISHED, LICENSED SOFTWARE.
+//            CONFIDENTIAL AND PROPRIETARY INFORMATION WHICH IS THE
+//          PROPERTY OF MENTOR GRAPHICS OR ITS LICENSORS
+//  
+//  Running on Windows 8 Fitkit@DESKTOP-NJUNEBJ  6.02 i686
+//  
+//  Package information: SIFLIBS v23.0_2.0, HLS_PKGS v23.0_1.0, 
+//                       DesignPad v2.78_1.0
+//  
+//  This version may only be used for academic purposes.  Some optimizations 
+//  are disabled, so results obtained from this version may be sub-optimal.
+//  
+if {[info script] != {} && [file isdirectory [file rootname [info script]]]} {
+  project load [file rootname [info script]] 10.0
+} elseif { [file isdirectory C:/Fitkit/apps/vga/segmentace/fpga/Catapult] } {
+  project load C:/Fitkit/apps/vga/segmentace/fpga/Catapult 10.0
+} else {
+  error {unable to locate project directory 'Catapult'}
+}
+
