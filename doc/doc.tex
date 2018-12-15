@@ -65,6 +65,8 @@
                 Vstavaný systém pre filtráciu a segmentáciu obrazu
             }
         }
+        \\[2.5em]
+        \Large{2018/2019}
         \vfill
     \end{center}
         \Large{
@@ -175,7 +177,7 @@ Výpočet času potrebného na spracovanie jednotlivých častí je zobrazený v
 
 S rozdelenou implementáciou sa rýchlosť spracovania výrazne zvýšila. Spracovanie všetkých rámcov (500 rámcov) za pomoci rozdelenia SW-HW trvá $6.144s$ ($6s \ 144 ms$).
 
-\section{Porovnanie vlastností SW a SW-HW}
+\section{Porovnanie vlastností SW a SW-HW}\label{sec:comparison}
 
 Časť SW je realizovaná iba na MCU narozdiel od SW-HW ktorá je realizovaná za pomoci MCU a FPGA súčastne. Porovnanie spracovaných častí v SW a SW-HW implementácii je zobrazené v tabuľke~\ref{tab:compare1}.
 
@@ -215,6 +217,13 @@ Metóda SW-HW implementovaná pomocou MCU-FPGA je o $1143.75$ násobne rýchlej�
 
 \section{Zhrnutie}
 
+Na základe hore uvedených meraní je zrejmé, že čisto SW a čisto HW realizácia má svoje výhody a nevýhody. Samotná SW realizácia sa ukázala ako značne pomalšia voči ostatným realizáciam. Čisto HW realizácia nie je možná z dôvodu nedostatkov výpočetných zdrojov ktoré sú zreteľne drahšie.\\
+
+Kombináciou SW a HW je ale možné dosiahnuť najefektívnejšiu metódu realizácie, ktorá na základe prepojenia SW a HW umožní realizovať SW pomalé časti v HW ktorý ich vykoná výrazne rýchlejšie.\\
+
+Keďže HW je v našom prípade limitovaný v rámci zdrojov, treba zvážiť na základe rýchlosti ktoré časti (časti ktoré sú v SW značne pomalé) treba previesť do HW keďže nie všetky je možné previesť. V našom prípade bola najpomalšia časť SW funkcia \textit{median} ale keďže bolo dostatok zdrojov ešte aj na ďalšie funkcie previedli sa aj ďalšie pomalé funkcie. Pri správnom rozdelení a prevode je výsledná realizácia výrazne rýchlejšia -- v našom prípade až $1143.75$ krát rýchlejšia.\\
+
+Ak by HW (čip FPGA) obsahoval dostatok zdrojov na to aby bolo možné presunúť zvyšné SW časti do HW (realizácia čisto v HW), zrýchlenie by bolo najväčšie. Problémom ale je, že v HW je výpočetná kapacita výrazne limitovaná cenou.
 
 %\newpage
 %\section{Literatúra}
