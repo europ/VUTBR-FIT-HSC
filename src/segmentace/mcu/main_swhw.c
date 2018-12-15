@@ -166,9 +166,9 @@ int main(void)
    unsigned int frame_previous = 0;
    unsigned long long int histogram[PIXELS] = {0, 0, 0, 0, 0, 0, 0, 0};
 
-   while(frame_current <= FRAMES) {
+   while(frame_current < FRAMES) { // FRAMES = 501
 
-      frame_current = fpga_read(FPGA_FRAME_CNT); // get current processed frame number
+      frame_current = fpga_read(FPGA_FRAME_CNT); // get current processed frame number (first frame is value 1)
 
       if ( (frame_current != frame_previous) && (frame_current % 10 == 0) ) { // frames evalulation (new frame && each 10th frame)
 

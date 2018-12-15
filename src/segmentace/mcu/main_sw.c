@@ -1,7 +1,7 @@
 #include <fitkitlib.h>
 #include "../cpu/common.h"
 
-#define PROFILE
+// #define PROFILE
 
 const int img_size[4] = {8,16,32,64};
 const int prime_num[16] = {919, 929, 937, 941, 947, 953, 967, 971, \
@@ -567,11 +567,11 @@ int main(void)
    t_pixel_sw  pix_input, pix_output;
    int         pix_output_vld;
 
-   gen_pixel(99);
-   for (f = 0; f < FRAMES; f+=100) {
+   for (f = 0; f < FRAMES; f+=100) { // loop for each 100th frame
+      gen_pixel(99); // skip pixel generation for 99 frames
       for (r = 0; r < FRAME_ROWS; r++) {
          for (c = 0; c < FRAME_COLS; c++) {
-            pix_input = gen_pixel(0);
+            pix_input = gen_pixel(0); // generate pixel for each 100th frame
 
             #ifdef PROFILE
                start_time = get_time();
@@ -584,7 +584,6 @@ int main(void)
             #endif
          }
       }
-      gen_pixel(99);
    }
 
    #ifdef PROFILE
@@ -610,4 +609,3 @@ int main(void)
       terminal_idle();  // obsluha terminalu
    }
 }
-
