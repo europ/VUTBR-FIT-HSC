@@ -114,7 +114,7 @@ Profilovanie CPU časti projektu bolo vykonané pomocou programu \textit{GNU gpr
 \newpage
 \section{MCU}
 
-Profilovanie MCU bolo vykonané pomocou makra \texttt{\#define PROFILE}. Výsledky sú zobrazené v tabuľke~\ref{tab:process}.
+Profilovanie MCU bolo vykonané pomocou makra \texttt{\#define PROFILE}. Výsledky sú zobrazené v tabuľke~\ref{tab:MCU_processing}.
 
 \begin{table}[H]
   \begin{center}
@@ -124,23 +124,23 @@ Profilovanie MCU bolo vykonané pomocou makra \texttt{\#define PROFILE}. Výsled
         pixel & $183 \ \mu s$\\
         rámec & $14.0544 \ s$\\
     \end{tabular}
-    \caption{Spracovanie určitých častí a ich trvanie.}
-    \label{tab:process}
+    \caption{Spracovanie určitých častí a ich trvanie na MCU.}
+    \label{tab:MCU_processing}
   \end{center}
 \end{table}
 
-Implementácia MCU časti je upravená tak aby spracovala 5 rámcov -- rámce číslo 100, 200, 300, 400, 500. Napriek tomu, že sa spracuje len 5 rámcov, doba spracovania piatich rámcov trvá $70.272 \ s$ ($1min \ 10s \ 272ms$). Kebyže implementácia MCU časti nie je upravená -- spracuje sa každý rámec, tak by spracovanie trvalo $7027.2 \ s$ ($1h \ 57min \ 7s \ 200ms$).
+Implementácia MCU časti je upravená tak aby spracovala 5 rámcov -- rámce číslo 100, 200, 300, 400, 500. Napriek tomu, že sa spracuje len 5 rámcov, doba spracovania piatich rámcov trvá $70.272s$ ($1min \ 10s \ 272ms$). Kebyže implementácia MCU časti nie je upravená -- spracuje sa každý rámec (500 rámcov), tak by spracovanie trvalo $7027.2s$ ($1h \ 57min \ 7s \ 200ms$).
 
 \section{FPGA}
 
-Vlastnosti komponenty pre filtráciu a segmentáciu obrazu:
+Vlastnosti komponenty pre filtráciu a segmentáciu obrazu:\\[-2em]
 
 \begin{itemize}
-    \item V jadre modulu pre \textit{filter} je \textit{main} zreťazený (pipeline enabled) s inicializačným intervalom~4
-    \item Cyklus označený ako \textit{Linit} je rozbalený (unroll enabled)
-    \item Cyklus označený ako \textit{L2} je rozbalený (unroll enabled)
-    \item Cyklus označený ako \textit{L1a} je rozbalený (unroll enabled)
-    \item Cyklus označený ako \textit{L1b} je rozbalený (unroll enabled)
+    \item V jadre modulu pre \textit{filter} je \textit{main} zreťazený (pipeline enabled) s inicializačným intervalom~4\\[-2em]
+    \item Cyklus označený ako \textit{Linit} je rozbalený (unroll enabled)\\[-2em]
+    \item Cyklus označený ako \textit{L2} je rozbalený (unroll enabled)\\[-2em]
+    \item Cyklus označený ako \textit{L1a} je rozbalený (unroll enabled)\\[-2em]
+    \item Cyklus označený ako \textit{L1b} je rozbalený (unroll enabled)\\[-2em]
     \item Latencia obvodu je 4
 \end{itemize}
 
@@ -158,22 +158,60 @@ Využitie zdrojov je zobrazené v tabuľke \ref{tab:fpga_resources}.
   \end{center}
 \end{table}
 
+Výpočet času potrebného na spracovanie jednotlivých častí je zobrazený v tabuľke \ref{tab:FPGA_processing}.
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{r|l}
+        \multicolumn{1}{c|}{\textbf{Spracovaná časť}} & \multicolumn{1}{c}{\textbf{Čas spracovania}}\\
+        \hline
+        pixel & $160 \ ns$\\
+        rámec & $0.012288 \ s$\\
+    \end{tabular}
+    \caption{Spracovanie určitých častí a ich trvanie na MCU-FPGA.}
+    \label{tab:FPGA_processing}
+  \end{center}
+\end{table}
+
+S rozdelenou implementáciou sa rýchlosť spracovania výrazne zvýšila. Spracovanie všetkých rámcov (500 rámcov) za pomoci rozdelenia SW-HW trvá $6.144s$ ($6s \ 144 ms$).
+
 \section{Porovnanie vlastností SW a SW-HW}
 
-Porovnanie jednotlivých vlastností SW a SW-HW je zobrazené v tabuľke \ref{tab:compare}.
+Časť SW je realizovaná iba na MCU narozdiel od SW-HW ktorá je realizovaná za pomoci MCU a FPGA súčastne. Porovnanie spracovaných častí v SW a SW-HW implementácii je zobrazené v tabuľke~\ref{tab:compare1}.
 
 \begin{table}[H]
   \begin{center}
     \begin{tabular}{r|l|l}
         & \multicolumn{1}{c|}{\textbf{SW}} & \multicolumn{1}{c}{\textbf{SW-HW}}\\
         \hline
-        pixel & $183 \ \mu s$ & \TODO\\
-        rámec & $14.0544 \ s$ & \TODO\\
+        pixel      & $183 \ \mu s$   & $160 \ ns$      \\
+        rámec      & $14.0544 \ s$   & $0.012288 \ s$  \\
     \end{tabular}
     \caption{Spracovanie určitých častí a ich trvanie.}
-    \label{tab:compare}
+    \label{tab:compare1}
   \end{center}
 \end{table}
+
+\hfill\\[-3em]
+
+Rýchlosti spracovania hore uvedených častí (viz tabuľka \ref{tab:compare1}) sú zobrazené v tabuľke~\ref{tab:compare2}.
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{r|l|l}
+        & \multicolumn{1}{c|}{\textbf{SW}} & \multicolumn{1}{c}{\textbf{SW-HW}}\\
+        \hline
+        počet pixelov za sekundu & $5464.48087432$ & $6250000$ \\
+        počet rámcov za sekundu & $0.07115209471$ & $81.3802083333$ \\
+    \end{tabular}
+    \caption{Spracovanie určitých častí za jednotku času.}
+    \label{tab:compare2}
+  \end{center}
+\end{table}
+
+\hfill\\[-3em]
+
+Metóda SW-HW implementovaná pomocou MCU-FPGA je o $1143.75$ násobne rýchlejšia od medódy SW ktorá je implementovaná pomocou MCU.
 
 \section{Zhrnutie}
 
