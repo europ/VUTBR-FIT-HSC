@@ -1,0 +1,375 @@
+
+# Messages from "go extract"
+
+Completed transformation 'extract' on solution 'filter.v1': elapsed time 2.97 seconds, memory usage 273672kB, peak memory usage 338008kB (SOL-9)
+Completed transformation 'instance' on solution 'filter.v1': elapsed time 1.36 seconds, memory usage 261144kB, peak memory usage 338008kB (SOL-9)
+Starting transformation 'extract' on solution 'filter.v1' (SOL-8)
+Optimizing partition '/filter': (Total ops = 1068, Real ops = 400, Vars = 260) (SOL-10)
+Optimizing partition '/filter/filter:core/filter:core_core:fsm': (Total ops = 10, Real ops = 2, Vars = 5) (SOL-10)
+Optimizing partition '/filter/filter:core/filter:core_core:fsm/filter:core_core:fsm': (Total ops = 9, Real ops = 1, Vars = 1) (SOL-10)
+Optimizing partition '/filter': (Total ops = 1068, Real ops = 400, Vars = 250) (SOL-10)
+Optimizing partition '/filter': (Total ops = 1068, Real ops = 400, Vars = 241) (SOL-10)
+Optimizing partition '/filter': (Total ops = 1021, Real ops = 409, Vars = 241) (SOL-10)
+Report written to file 'rtl.rpt'
+Netlist written to file 'rtl.vhdl' (NET-4)
+generate concat
+order file name is: rtl.vhdl_order.txt
+Add dependent file: C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/hls_pkgs/src/funcs.vhd
+Add dependent file: C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/siflibs/mgc_ioport_comps_v11.vhd
+Add dependent file: C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/siflibs/mgc_in_wire_en_v1.vhd
+Add dependent file: C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/siflibs/mgc_in_wire_v1.vhd
+Add dependent file: C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/siflibs/mgc_out_stdreg_en_v1.vhd
+Add dependent file: C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/ccs_xilinx/hdl/BLOCK_1R1W_RBW.vhd
+Add dependent file: ./rtl.vhdl
+Finished writing concatenated file: C:/Fitkit/apps/vga/segmentace/fpga/Catapult/filter.v1/concat_rtl.vhdl
+order file name is: rtl.vhdl_order_sim.txt
+Finished writing concatenated simulation file: C:/Fitkit/apps/vga/segmentace/fpga/Catapult/filter.v1/concat_sim_rtl.vhdl
+Xilinx XST synthesis script written to 'xst/rtl_vhdl_xst.tcl'
+Xilinx XST synthesis script written to 'xst/concat_rtl_vhdl_xst.tcl'
+Netlist written to file 'rtl.v' (NET-4)
+order file name is: rtl.v_order.txt
+Add dependent file: C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/siflibs/mgc_in_wire_en_v1.v
+Add dependent file: C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/siflibs/mgc_in_wire_v1.v
+Add dependent file: C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/siflibs/mgc_out_stdreg_en_v1.v
+Add dependent file: C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/ccs_xilinx/hdl/BLOCK_1R1W_RBW.v
+Add dependent file: ./rtl.v
+Finished writing concatenated file: C:/Fitkit/apps/vga/segmentace/fpga/Catapult/filter.v1/concat_rtl.v
+order file name is: rtl.v_order_sim.txt
+Finished writing concatenated simulation file: C:/Fitkit/apps/vga/segmentace/fpga/Catapult/filter.v1/concat_sim_rtl.v
+Xilinx XST synthesis script written to 'xst/rtl_v_xst.tcl'
+Xilinx XST synthesis script written to 'xst/concat_rtl_v_xst.tcl'
+Extrapolation detected. Script 'C:/Fitkit/apps/vga/segmentace/fpga/Catapult/filter.v1/adjust_char_library.tcl' generated. (LIB-142)
+Completed transformation 'dpfsm' on solution 'filter.v1': elapsed time 2.67 seconds, memory usage 260732kB, peak memory usage 338008kB (SOL-9)
+Starting transformation 'instance' on solution 'filter.v1' (SOL-8)
+Shared Operations thresholding:acc,L1a:if:acc#9,L1a:if:acc#15 on resource L1a:if:acc#15:rg:mgc_add(4,0,3,0,4) (ASG-3)
+Shared Operations L1b:if:acc#10,L1b:if:acc#16,L1b:if:acc#7 on resource L1b:if:acc#10:rg:mgc_add(4,0,3,0,4) (ASG-3)
+Shared Operations L1a:if:acc#17,L1a:if:acc#3,L1a:if:acc#8 on resource L1a:if:acc#17:rg:mgc_add(4,0,3,0,4) (ASG-3)
+Shared Operations L1a:if:acc#16,L1a:if:acc,L1a:if:acc#7 on resource L1a:if:acc:rg:mgc_add(4,0,3,0,4) (ASG-3)
+Shared Operations L1a:if:acc#2,L1b:if:acc#6 on resource L1a:if:acc#2:rg:mgc_add(4,0,3,0,4) (ASG-3)
+Shared Operations L1a:if:acc#6,L1a:if:acc#11 on resource L1a:if:acc#11:rg:mgc_add(4,0,3,0,4) (ASG-3)
+Shared Operations L1b:if:acc#5,L1b:if:acc#8 on resource L1b:if:acc#5:rg:mgc_add(4,0,3,0,4) (ASG-3)
+Shared Operations L1a:if:acc#5,L1a:if:acc#10 on resource L1a:if:acc#10:rg:mgc_add(4,0,3,0,4) (ASG-3)
+Shared Operations L1b:if:acc,L1b:if:acc#9 on resource L1b:if:acc:rg:mgc_add(4,0,3,0,4) (ASG-3)
+Optimizing partition '/filter': (Total ops = 1231, Real ops = 515, Vars = 1156) (SOL-10)
+Optimizing partition '/filter/filter:core/filter:core_core:fsm': (Total ops = 10, Real ops = 2, Vars = 5) (SOL-10)
+Optimizing partition '/filter/filter:core/filter:core_core:fsm/filter:core_core:fsm': (Total ops = 9, Real ops = 1, Vars = 1) (SOL-10)
+Optimizing partition '/filter': (Total ops = 1171, Real ops = 448, Vars = 346) (SOL-10)
+Optimizing partition '/filter': (Total ops = 1094, Real ops = 405, Vars = 240) (SOL-10)
+Optimizing partition '/filter': (Total ops = 1068, Real ops = 400, Vars = 241) (SOL-10)
+Netlist written to file 'schematic.nlv' (NET-4)
+
+# Messages from "go dpfsm"
+
+Completed transformation 'schedule' on solution 'filter.v1': elapsed time 4.48 seconds, memory usage 260324kB, peak memory usage 338008kB (SOL-9)
+Starting transformation 'dpfsm' on solution 'filter.v1' (SOL-8)
+Performing FSM extraction... (FSM-1)
+Optimizing partition '/filter': (Total ops = 2014, Real ops = 777, Vars = 2047) (SOL-10)
+Optimizing partition '/filter/filter:core/filter:core_core:fsm': (Total ops = 10, Real ops = 2, Vars = 5) (SOL-10)
+Optimizing partition '/filter/filter:core/filter:core_core:fsm/filter:core_core:fsm': (Total ops = 9, Real ops = 1, Vars = 1) (SOL-10)
+Optimizing partition '/filter': (Total ops = 1222, Real ops = 574, Vars = 276) (SOL-10)
+Optimizing partition '/filter': (Total ops = 1188, Real ops = 529, Vars = 268) (SOL-10)
+Optimizing partition '/filter': (Total ops = 1187, Real ops = 519, Vars = 277) (SOL-10)
+Optimizing partition '/filter': (Total ops = 1179, Real ops = 519, Vars = 268) (SOL-10)
+Optimizing partition '/filter': (Total ops = 1177, Real ops = 519, Vars = 266) (SOL-10)
+
+# Messages from "go schedule"
+
+Completed transformation 'allocate' on solution 'filter.v1': elapsed time 1.14 seconds, memory usage 259564kB, peak memory usage 338008kB (SOL-9)
+Starting transformation 'schedule' on solution 'filter.v1' (SOL-8)
+Performing concurrent resource allocation and scheduling on '/filter/core' (CRAAS-1)
+Global signal 'in_data:rsc.lz' added to design 'filter' for component 'in_data:rsci' (LIB-3)
+Global signal 'in_data:rsc.z' added to design 'filter' for component 'in_data:rsci' (LIB-3)
+Global signal 'in_data_vld:rsc.z' added to design 'filter' for component 'in_data_vld:rsci' (LIB-3)
+Global signal 'out_data:rsc.lz' added to design 'filter' for component 'out_data:rsci' (LIB-3)
+Global signal 'out_data:rsc.z' added to design 'filter' for component 'out_data:rsci' (LIB-3)
+Global signal 'mcu_data:rsc.we' added to design 'filter' for component 'mcu_data:rsci' (LIB-3)
+Global signal 'mcu_data:rsc.d' added to design 'filter' for component 'mcu_data:rsci' (LIB-3)
+Global signal 'mcu_data:rsc.q' added to design 'filter' for component 'mcu_data:rsci' (LIB-3)
+Global signal 'mcu_data:rsc.adr' added to design 'filter' for component 'mcu_data:rsci' (LIB-3)
+Global signal 'buffer:buf:rsc.we' added to design 'filter' for component 'buffer:buf:rsci' (LIB-3)
+Global signal 'buffer:buf:rsc.d' added to design 'filter' for component 'buffer:buf:rsci' (LIB-3)
+Global signal 'buffer:buf:rsc.wadr' added to design 'filter' for component 'buffer:buf:rsci' (LIB-3)
+Global signal 'buffer:buf:rsc.re' added to design 'filter' for component 'buffer:buf:rsci' (LIB-3)
+Global signal 'buffer:buf:rsc.q' added to design 'filter' for component 'buffer:buf:rsci' (LIB-3)
+Global signal 'buffer:buf:rsc.radr' added to design 'filter' for component 'buffer:buf:rsci' (LIB-3)
+Loop '/filter/core/main' is pipelined with initiation interval 4 and no flushing (SCHD-43)
+Optimizing partition '/filter': (Total ops = 1320, Real ops = 233, Vars = 235) (SOL-10)
+Optimizing partition '/filter/filter:core/core': (Total ops = 1240, Real ops = 231, Vars = 183) (SOL-10)
+Optimizing partition '/filter/filter:core/core': (Total ops = 822, Real ops = 226, Vars = 162) (SOL-10)
+Optimizing partition '/filter/filter:core/core': (Total ops = 821, Real ops = 224, Vars = 162) (SOL-10)
+Optimizing partition '/filter/filter:core/core': (Total ops = 820, Real ops = 224, Vars = 161) (SOL-10)
+Optimizing partition '/filter': (Total ops = 902, Real ops = 226, Vars = 212) (SOL-10)
+Splitting object 'out_data:rsci.d' into 2 segments (OPT-19)
+Optimizing partition '/filter/filter:core/core': (Total ops = 819, Real ops = 224, Vars = 161) (SOL-10)
+Optimizing partition '/filter': (Total ops = 899, Real ops = 226, Vars = 212) (SOL-10)
+Report written to file 'cycle.rpt'
+
+# Messages from "go allocate"
+
+Completed transformation 'architect' on solution 'filter.v1': elapsed time 1.72 seconds, memory usage 259560kB, peak memory usage 338008kB (SOL-9)
+Starting transformation 'allocate' on solution 'filter.v1' (SOL-8)
+Performing concurrent resource allocation and scheduling on '/filter/core' (CRAAS-1)
+Select qualified components for data operations ... (CRAAS-3)
+Apply resource constraints on data operations ... (CRAAS-4)
+Prescheduled LOOP '/filter/core/main' (5 c-steps) (SCHD-7)
+Prescheduled LOOP '/filter/core/buffer:buf:vinit' (2 c-steps) (SCHD-7)
+Prescheduled LOOP '/filter/core/core:rlp' (1 c-steps) (SCHD-7)
+Prescheduled SEQUENTIAL '/filter/core' (total length 1286 c-steps) (SCHD-8)
+Initial schedule of SEQUENTIAL '/filter/core': Latency = 4, Area (Datapath, Register, Total) = 751.66, 0.00, 751.66 (CRAAS-11)
+At least one feasible schedule exists. (CRAAS-9)
+Optimized LOOP '/filter/core/main': Latency = 4, Area (Datapath, Register, Total) = 741.71, 0.00, 741.71 (CRAAS-10)
+Optimized LOOP '/filter/core/main': Latency = 4, Area (Datapath, Register, Total) = 740.72, 0.00, 740.72 (CRAAS-10)
+Optimized LOOP '/filter/core/main': Latency = 4, Area (Datapath, Register, Total) = 722.81, 0.00, 722.81 (CRAAS-10)
+Optimized LOOP '/filter/core/main': Latency = 4, Area (Datapath, Register, Total) = 721.81, 0.00, 721.81 (CRAAS-10)
+Optimized LOOP '/filter/core/main': Latency = 4, Area (Datapath, Register, Total) = 718.83, 0.00, 718.83 (CRAAS-10)
+Final schedule of SEQUENTIAL '/filter/core': Latency = 4, Area (Datapath, Register, Total) = 718.83, 0.00, 718.83 (CRAAS-12)
+Resource allocation and scheduling done. (CRAAS-2)
+Netlist written to file 'schedule.gnt' (NET-4)
+
+# Messages from "go architect"
+
+Completed transformation 'cluster' on solution 'filter.v1': elapsed time 0.08 seconds, memory usage 259864kB, peak memory usage 338008kB (SOL-9)
+Starting transformation 'architect' on solution 'filter.v1' (SOL-8)
+Optimizing partition '/filter/core': (Total ops = 2148, Real ops = 488, Vars = 1048) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 685, Real ops = 226, Vars = 162) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 685, Real ops = 226, Vars = 153) (SOL-10)
+Design 'filter' contains '231' real operations. (SOL-11)
+Completed transformation 'memories' on solution 'filter.v1': elapsed time 2.19 seconds, memory usage 259864kB, peak memory usage 338008kB (SOL-9)
+Starting transformation 'cluster' on solution 'filter.v1' (SOL-8)
+Completed transformation 'loops' on solution 'filter.v1': elapsed time 4.13 seconds, memory usage 259864kB, peak memory usage 338008kB (SOL-9)
+Starting transformation 'memories' on solution 'filter.v1' (SOL-8)
+Memory Resource '/filter/core/buffer:buf:rsc' (from var: buffer:buf) mapped to 'Xilinx_RAMS.BLOCK_1R1W_RBW' (size: 640 x 3). (MEM-4)
+I/O-Port Resource '/filter/in_data:rsc' (from var: in_data) mapped to 'mgc_ioport.mgc_in_wire_en' (size: 3). (MEM-2)
+I/O-Port Resource '/filter/in_data_vld:rsc' (from var: in_data_vld) mapped to 'mgc_ioport.mgc_in_wire' (size: 1). (MEM-2)
+I/O-Port Resource '/filter/out_data:rsc' (from var: out_data) mapped to 'mgc_ioport.mgc_out_stdreg_en' (size: 3). (MEM-2)
+Memory Resource '/filter/mcu_data:rsc' (from var: mcu_data) mapped to 'Xilinx_RAMS.BLOCK_SPRAM_RBW' (size: 512 x 32). (MEM-4)
+Optimizing partition '/filter': (Total ops = 806, Real ops = 95, Vars = 58) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 806, Real ops = 95, Vars = 52) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 781, Real ops = 95, Vars = 53) (SOL-10)
+Optimizing partition '/filter': (Total ops = 781, Real ops = 95, Vars = 59) (SOL-10)
+Splitting object 'pixel_processing:window' into 9 segments (OPT-19)
+Splitting object 'system_input:window' into 9 segments (OPT-19)
+Splitting object 'median:max' into 10 segments (OPT-19)
+Splitting object 'median:max2' into 10 segments (OPT-19)
+Optimizing partition '/filter': (Total ops = 670, Real ops = 95, Vars = 93) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 670, Real ops = 95, Vars = 87) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 558, Real ops = 93, Vars = 103) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 556, Real ops = 93, Vars = 102) (SOL-10)
+Optimizing partition '/filter': (Total ops = 556, Real ops = 93, Vars = 108) (SOL-10)
+Completed transformation 'assembly' on solution 'filter.v1': elapsed time 0.34 seconds, memory usage 258972kB, peak memory usage 338008kB (SOL-9)
+/filter/mcu_data:rsc/MAP_TO_MODULE Xilinx_RAMS.BLOCK_SPRAM_RBW
+/filter/in_data:rsc/MAP_TO_MODULE mgc_ioport.mgc_in_wire_en
+/filter/out_data:rsc/MAP_TO_MODULE mgc_ioport.mgc_out_stdreg_en
+/filter/core/main/PIPELINE_INIT_INTERVAL 4
+/filter/core/Linit/UNROLL yes
+/filter/core/L2/UNROLL yes
+/filter/core/L1a/UNROLL yes
+/filter/core/L1b/UNROLL yes
+Starting transformation 'loops' on solution 'filter.v1' (SOL-8)
+Optimizing partition '/filter/core': (Total ops = 419, Real ops = 45, Vars = 51) (SOL-10)
+Loop '/filter/core/Linit' is being fully unrolled (9 times). (LOOP-7)
+Optimizing partition '/filter/core': (Total ops = 491, Real ops = 69, Vars = 51) (SOL-10)
+Loop '/filter/core/L1a' is being fully unrolled (5 times). (LOOP-7)
+Optimizing partition '/filter/core': (Total ops = 571, Real ops = 89, Vars = 51) (SOL-10)
+Loop '/filter/core/L1b' is being fully unrolled (4 times). (LOOP-7)
+Optimizing partition '/filter/core': (Total ops = 619, Real ops = 98, Vars = 51) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 505, Real ops = 52, Vars = 43) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 505, Real ops = 52, Vars = 48) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 500, Real ops = 52, Vars = 43) (SOL-10)
+Loop '/filter/core/L2' is being fully unrolled (5 times). (LOOP-7)
+Optimizing partition '/filter/core': (Total ops = 1004, Real ops = 136, Vars = 43) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 978, Real ops = 121, Vars = 42) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 890, Real ops = 113, Vars = 58) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 858, Real ops = 108, Vars = 46) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 834, Real ops = 104, Vars = 46) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 811, Real ops = 100, Vars = 47) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 795, Real ops = 98, Vars = 47) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 782, Real ops = 96, Vars = 48) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 770, Real ops = 94, Vars = 49) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 763, Real ops = 93, Vars = 50) (SOL-10)
+Loop '/filter/core/main' is left rolled. (LOOP-4)
+Optimizing partition '/filter': (Total ops = 763, Real ops = 93, Vars = 56) (SOL-10)
+
+# Messages from "go assembly"
+
+Completed transformation 'libraries' on solution 'filter.v1': elapsed time 0.52 seconds, memory usage 256464kB, peak memory usage 338008kB (SOL-9)
+/CLOCKS {clk {-CLOCK_PERIOD 40.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -CLOCK_HIGH_TIME 20.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+Starting transformation 'assembly' on solution 'filter.v1' (SOL-8)
+Optimizing partition '/filter': (Total ops = 419, Real ops = 45, Vars = 57) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 419, Real ops = 45, Vars = 51) (SOL-10)
+
+# Messages from "go libraries"
+
+Completed transformation 'compile' on solution 'filter.v1': elapsed time 3.78 seconds, memory usage 254560kB, peak memory usage 338008kB (SOL-9)
+Starting transformation 'libraries' on solution 'filter.v1' (SOL-8)
+Reading component library '$MGC_HOME/pkgs/siflibs/mgc_busdefs.lib' [mgc_busdefs]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/stdops.lib' [STDOPS]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/mgc_ioport.lib' [mgc_ioport]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/cds_assert/assert_ops.lib' [ASSERT_OPS]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/cds_assert/assert_mods.lib' [assert_mods]... (LIB-49)
+Reading component library '$MGC_HOME/pkgs/siflibs/xilinx/mgc_Xilinx-SPARTAN3-4_beh_xst.lib' [mgc_Xilinx-SPARTAN3-4_beh_xst]... (LIB-49)
+Detected an old component library 'mgc_Xilinx-SPARTAN3-4_beh_xst' - it is recommended that the user update this component library to the latest version. It can be done by reading this old component library in Catapult Library Builder (10.0c/745553 or later) and saving the library into the target file. (LIB-82)
+Reading component library '$MGC_HOME/pkgs/ccs_xilinx/Xilinx_RAMS_xst.lib' [Xilinx_RAMS]... (LIB-49)
+Component library 'Xilinx_RAMS' created with a newer version of Catapult Library Builder, 10.1/271504 > 10.0c/745553 (LIB-83)
+No Encrypted Liberty technology libraries have been specified (LIB-192)
+No Liberty technology libraries have been specified (LIB-192)
+No Synopsys DB technology libraries have been specified (LIB-192)
+
+# Messages from "go compile"
+
+Completed transformation 'analyze' on solution 'solution.v2': elapsed time 2.91 seconds, memory usage 245500kB, peak memory usage 335084kB (SOL-9)
+Starting transformation 'compile' on solution 'solution.v2' (SOL-8)
+Generating synthesis internal form... (CIN-3)
+Found top design routine 'filter' specified by directive (CIN-52)
+Synthesizing routine 'filter' (CIN-13)
+Inlining routine 'filter' (CIN-14)
+Inlining routine 'pixel_processing' (CIN-14)
+Inlining routine 'system_input' (CIN-14)
+Inlining routine 'buffer' (CIN-14)
+Inlining routine 'shift_window' (CIN-14)
+Inlining routine 'clip_window' (CIN-14)
+Inlining routine 'median' (CIN-14)
+Inlining routine 'thresholding' (CIN-14)
+Optimizing block '/filter' ... (CIN-4)
+Inout port 'in_data' is only used as an input. (OPT-10)
+Inout port 'in_data_vld' is only used as an input. (OPT-10)
+Optimizing partition '/filter': (Total ops = 540, Real ops = 131, Vars = 230) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 540, Real ops = 131, Vars = 226) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 524, Real ops = 102, Vars = 232) (SOL-10)
+Optimizing partition '/filter': (Total ops = 524, Real ops = 102, Vars = 236) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 471, Real ops = 87, Vars = 145) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 459, Real ops = 87, Vars = 149) (SOL-10)
+Optimizing partition '/filter': (Total ops = 459, Real ops = 87, Vars = 153) (SOL-10)
+Splitting object 'L1a:if:mul.sdt#1' into 2 segments (OPT-19)
+Splitting object 'L1a:else:mul.sdt' into 2 segments (OPT-19)
+Splitting object 'L1b:if:mul.sdt#1' into 2 segments (OPT-19)
+Splitting object 'L1b:else:mul.sdt#1' into 2 segments (OPT-19)
+Splitting object 'buffer:sel#1' into 2 segments (OPT-19)
+Splitting object 'pref' into 2 segments (OPT-19)
+Splitting object 'clip_window:iw.idx' into 2 segments (OPT-19)
+Splitting object 'clip_window:first_row' into 2 segments (OPT-19)
+Splitting object 'clip_window:last_row' into 2 segments (OPT-19)
+Splitting object 'clip_window:first_col' into 2 segments (OPT-19)
+Splitting object 'clip_window:last_col' into 2 segments (OPT-19)
+Splitting object 'clip_window:test1' into 2 segments (OPT-19)
+Splitting object 'clip_window:test2' into 2 segments (OPT-19)
+Splitting object 'clip_window:test3' into 2 segments (OPT-19)
+Splitting object 'clip_window:test4' into 2 segments (OPT-19)
+Splitting object 'clip_window:test1.sw' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp:acc.tdx' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp:acc.tdx#1' into 2 segments (OPT-19)
+Splitting object 'clip_window:test2.sw' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#1:acc.tdx#1' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#1:acc.tdx#3' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#1:acc.tdx#5' into 2 segments (OPT-19)
+Splitting object 'clip_window:test3.sw' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#2:acc.tdx#1' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#2:acc.tdx#3' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#2:acc.tdx#5' into 2 segments (OPT-19)
+Splitting object 'clip_window:test4.sw' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#3:acc.tdx#1' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#3:acc.tdx#3' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#3:acc.tdx#5' into 2 segments (OPT-19)
+Splitting object 'median:window.idx' into 2 segments (OPT-19)
+Splitting object 'pref#1' into 2 segments (OPT-19)
+Splitting object 'Linit:acc.tdx' into 2 segments (OPT-19)
+Splitting object 'pref#2' into 3 segments (OPT-19)
+Splitting object 'pref:pref.pref#2' into 3 segments (OPT-19)
+Splitting object 'pref#3' into 3 segments (OPT-19)
+Splitting object 'pref:pref.pref#3' into 3 segments (OPT-19)
+Splitting object 'pref:pref.pref.pref#1' into 3 segments (OPT-19)
+Splitting object 'pref#4' into 3 segments (OPT-19)
+Splitting object 'pref#6' into 3 segments (OPT-19)
+Splitting object 'pref#8' into 3 segments (OPT-19)
+Splitting object 'pref#10' into 3 segments (OPT-19)
+Splitting object 'pref#12' into 3 segments (OPT-19)
+Splitting object 'pref:pref.pref#8' into 3 segments (OPT-19)
+Splitting object 'pref#13' into 3 segments (OPT-19)
+Splitting object 'pref:pref.pref#9' into 3 segments (OPT-19)
+Splitting object 'pref:pref.pref.pref#2' into 3 segments (OPT-19)
+Splitting object 'pref#14' into 3 segments (OPT-19)
+Splitting object 'pref#16' into 3 segments (OPT-19)
+Splitting object 'pref#18' into 3 segments (OPT-19)
+Splitting object 'pref#20' into 3 segments (OPT-19)
+Splitting object 'pixel_processing:if:if:acc.tdx' into 2 segments (OPT-19)
+Splitting object 'pref:pixel_processing:mcu_data.idx.pref' into 2 segments (OPT-19)
+Splitting object 'thresholding:threshold' into 2 segments (OPT-19)
+Splitting object 'pixel_processing:if:if#1:ac_int:cctor' into 2 segments (OPT-19)
+Splitting object 'L1a:if:slc(pref#4)(3-0).tmp' into 2 segments (OPT-19)
+Splitting object 'L1a:else:slc(pref#8)(3-0).tmp' into 2 segments (OPT-19)
+Splitting object 'L1b:if:slc(pref#16)(3-0).tmp' into 2 segments (OPT-19)
+Splitting object 'L1b:else:slc(pref#20)(3-0).tmp' into 2 segments (OPT-19)
+Optimizing partition '/filter/core': (Total ops = 518, Real ops = 78, Vars = 220) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 695, Real ops = 64, Vars = 42) (SOL-10)
+Optimizing partition '/filter': (Total ops = 695, Real ops = 64, Vars = 46) (SOL-10)
+Splitting object 'thresholding:return' into 2 segments (OPT-19)
+Optimizing partition '/filter/core': (Total ops = 695, Real ops = 64, Vars = 43) (SOL-10)
+Loop '/filter/core/Linit' iterated at most 9 times. (LOOP-2)
+Loop '/filter/core/L1a' iterated at most 5 times. (LOOP-2)
+Loop '/filter/core/L1b' iterated at most 4 times. (LOOP-2)
+Loop '/filter/core/L2' iterated at most 5 times. (LOOP-2)
+Optimizing partition '/filter/core': (Total ops = 437, Real ops = 47, Vars = 56) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 425, Real ops = 44, Vars = 52) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 424, Real ops = 44, Vars = 51) (SOL-10)
+Optimizing partition '/filter': (Total ops = 424, Real ops = 44, Vars = 55) (SOL-10)
+Splitting object 'median:i' into 2 segments (OPT-19)
+Splitting object 'median:j' into 2 segments (OPT-19)
+Splitting object 'median:i#1' into 2 segments (OPT-19)
+Splitting object 'median:i#2' into 2 segments (OPT-19)
+Optimizing partition '/filter/core': (Total ops = 418, Real ops = 44, Vars = 55) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 418, Real ops = 44, Vars = 51) (SOL-10)
+Optimizing partition '/filter': (Total ops = 418, Real ops = 44, Vars = 55) (SOL-10)
+Design 'filter' was read (SOL-1)
+
+# Messages from "go analyze"
+
+solution.v2
+/INPUTFILES/1
+/INPUTFILES/2
+/INPUTFILES/3
+/DESIGN_GOAL area
+/OLD_SCHED false
+/SPECULATE true
+/MERGEABLE true
+/REGISTER_THRESHOLD 256
+/MEM_MAP_THRESHOLD 32
+/FSM_ENCODING none
+/REG_MAX_FANOUT 0
+/NO_X_ASSIGNMENTS true
+/SAFE_FSM false
+/ASSIGN_OVERHEAD 0
+/UNROLL no
+/IO_MODE super
+/REGISTER_IDLE_SIGNAL false
+/IDLE_SIGNAL {}
+/STALL_FLAG false
+/TRANSACTION_DONE_SIGNAL false
+/DONE_FLAG {}
+/READY_FLAG {}
+/START_FLAG {}
+/BLOCK_SYNC none
+/TRANSACTION_SYNC ready
+/DATA_SYNC none
+/RESET_CLEARS_ALL_REGS true
+/CLOCK_OVERHEAD 40.000000
+/OPT_CONST_MULTS use_library
+/CHARACTERIZE_ROM false
+/PROTOTYPE_ROM true
+/ROM_THRESHOLD 64
+/CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+/CLUSTER_OPT_CONSTANT_INPUTS true
+/CLUSTER_RTL_SYN false
+/CLUSTER_FAST_MODE false
+/CLUSTER_TYPE combinational
+/COMPGRADE fast
+/DESIGN_HIERARCHY filter__FR31ac_int__tm__17_XCiL_1_3XCbL_1_0RbT1P32ac_int__tm__18_XCiL_2_32XCbL_1_0
+Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+Moving session transcript to file "C:\Fitkit\apps\vga\segmentace\fpga\catapult.log"
+Front End called with arguments: -- {C:\Fitkit\apps\vga\segmentace\fpga\src_filter\addr_space.h} {C:\Fitkit\apps\vga\segmentace\fpga\src_filter\filter.cpp} {C:\Fitkit\apps\vga\segmentace\fpga\src_filter\filter.h} (CIN-69)
+Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+Pragma 'hls_design<top>' detected on routine 'filter' (CIN-6)
+Source file analysis completed (CIN-68)
+
+# Messages from "go new"
+
+Branching solution 'solution.v2' at state 'initial' (PRJ-2)

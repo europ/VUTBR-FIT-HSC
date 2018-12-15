@@ -1,7 +1,0 @@
-C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/hls_pkgs/src/funcs.vhd
-C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/siflibs/mgc_ioport_comps_v11.vhd
-C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/siflibs/mgc_in_wire_en_v1.vhd
-C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/siflibs/mgc_in_wire_v1.vhd
-C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/siflibs/mgc_out_stdreg_en_v1.vhd
-C:/PROGRA~1/MENTOR~1/CATAPU~1.0C/Mgc_home/pkgs/ccs_xilinx/hdl/BLOCK_1R1W_RBW.vhd
-./rtl.vhdl

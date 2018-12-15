@@ -1,0 +1,83 @@
+V3 52
+FL C:/Fitkit/apps/vga/segmentace/build/fpga/med_filtr_config.vhd 2018/12/15.15:29:54 P.20131013
+PH work/fpga_cfg 1544888456 \
+      FL C:/Fitkit/apps/vga/segmentace/build/fpga/med_filtr_config.vhd \
+      PB work/clkgen_cfg 1544888444
+PB work/fpga_cfg 1544888457 \
+      FL C:/Fitkit/apps/vga/segmentace/build/fpga/med_filtr_config.vhd \
+      PH work/fpga_cfg 1544888456
+FL C:/Fitkit/apps/vga/segmentace/fpga/top_level.vhd 2018/12/15.15:50:38 P.20131013
+AR work/tlv_pc_ifc/arch_beh 1544888460 \
+      FL C:/Fitkit/apps/vga/segmentace/fpga/top_level.vhd EN work/tlv_pc_ifc 1544888455 \
+      LB UNISIM PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179 PH unisim/VCOMPONENTS 1381692182 \
+      CP work/vga_controller CP genpix CP filter CP video_buf CP work/SPI_adc \
+      PB work/vga_controller_cfg 1544888446
+FL C:/Fitkit/fpga/chips/architecture_pc/arch_pc_ifc.vhd 2009/02/07.15:52:52 P.20131013
+AR work/fpga/arch_pc_ifc 1544888461 \
+      FL C:/Fitkit/fpga/chips/architecture_pc/arch_pc_ifc.vhd EN work/fpga 1544888450 \
+      CP work/clkgen CP SPI_ctrl CP tlv_pc_ifc PB work/clkgen_cfg 1544888444 \
+      PB work/fpga_cfg 1544888457
+FL C:/Fitkit/fpga/chips/architecture_pc/tlv_pc_ifc.vhd 2009/02/07.15:52:52 P.20131013
+EN work/tlv_pc_ifc 1544888455 \
+      FL C:/Fitkit/fpga/chips/architecture_pc/tlv_pc_ifc.vhd \
+      PB ieee/std_logic_1164 1381692176
+FL C:/Fitkit/fpga/chips/fpga_xc3s50.vhd 2009/02/07.15:52:52 P.20131013
+EN work/fpga 1544888450 FL C:/Fitkit/fpga/chips/fpga_xc3s50.vhd \
+      PB ieee/std_logic_1164 1381692176
+FL C:/Fitkit/fpga/ctrls/spi/spi_adc.vhd 2009/02/07.15:52:52 P.20131013
+AR work/SPI_adc/basic 1544888466 FL C:/Fitkit/fpga/ctrls/spi/spi_adc.vhd \
+      EN work/SPI_adc 1544888447 PB ieee/std_logic_1164 1381692176 \
+      PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179 \
+      PB work/math_pack 1544888449
+FL C:/Fitkit/fpga/ctrls/spi/spi_adc_autoincr.vhd 2009/02/07.15:52:52 P.20131013
+AR work/SPI_adc/autoincrement 1544888465 \
+      FL C:/Fitkit/fpga/ctrls/spi/spi_adc_autoincr.vhd EN work/SPI_adc 1544888447 \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179 PB work/math_pack 1544888449
+FL C:/Fitkit/fpga/ctrls/spi/spi_adc_entity.vhd 2009/02/07.15:52:52 P.20131013
+EN work/SPI_adc 1544888447 FL C:/Fitkit/fpga/ctrls/spi/spi_adc_entity.vhd \
+      PB ieee/std_logic_1164 1381692176
+FL C:/Fitkit/fpga/ctrls/spi/spi_ctrl.vhd 2009/02/07.15:52:52 P.20131013
+EN work/SPI_ctrl 1544888453 FL C:/Fitkit/fpga/ctrls/spi/spi_ctrl.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/SPI_ctrl/Arch_SPI_ctrl2 1544888454 \
+      FL C:/Fitkit/fpga/ctrls/spi/spi_ctrl.vhd EN work/SPI_ctrl 1544888453
+FL C:/Fitkit/fpga/ctrls/spi/spi_reg.vhd 2017/10/24.13:26:00 P.20131013
+PH work/spi_cfg 1544888462 FL C:/Fitkit/fpga/ctrls/spi/spi_reg.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177
+EN work/SPI_reg 1544888463 \
+      FL C:/Fitkit/fpga/ctrls/spi/spi_reg.vhd PB ieee/std_logic_1164 1381692176 \
+      PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/SPI_reg/beh 1544888464 \
+      FL C:/Fitkit/fpga/ctrls/spi/spi_reg.vhd EN work/SPI_reg 1544888463 \
+      CP SPI_adc
+FL C:/Fitkit/fpga/ctrls/vga/vga_config.vhd 2009/02/07.15:52:52 P.20131013
+PH work/vga_controller_cfg 1544888445 FL C:/Fitkit/fpga/ctrls/vga/vga_config.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177
+PB work/vga_controller_cfg 1544888446 \
+      FL C:/Fitkit/fpga/ctrls/vga/vga_config.vhd PH work/vga_controller_cfg 1544888445
+FL C:/Fitkit/fpga/ctrls/vga/vga_ctrl.vhd 2009/02/07.15:52:52 P.20131013
+EN work/vga_controller 1544888458 FL C:/Fitkit/fpga/ctrls/vga/vga_ctrl.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179 PB work/vga_controller_cfg 1544888446
+AR work/vga_controller/arch_vga_controller 1544888459 \
+      FL C:/Fitkit/fpga/ctrls/vga/vga_ctrl.vhd EN work/vga_controller 1544888458
+FL C:/Fitkit/fpga/units/clkgen/clkgen.vhd 2009/02/07.15:52:52 P.20131013
+EN work/clkgen 1544888451 FL C:/Fitkit/fpga/units/clkgen/clkgen.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 LB UNISIM \
+      PH unisim/VCOMPONENTS 1381692182 PB work/clkgen_cfg 1544888444
+AR work/clkgen/BEHAVIORAL 1544888452 \
+      FL C:/Fitkit/fpga/units/clkgen/clkgen.vhd EN work/clkgen 1544888451 CP BUFG \
+      CP IBUFG CP DCM
+FL C:/Fitkit/fpga/units/clkgen/clkgen_config.vhd 2009/02/07.15:52:52 P.20131013
+PH work/clkgen_cfg 1544888443 FL C:/Fitkit/fpga/units/clkgen/clkgen_config.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177
+PB work/clkgen_cfg 1544888444 \
+      FL C:/Fitkit/fpga/units/clkgen/clkgen_config.vhd PH work/clkgen_cfg 1544888443
+FL C:/Fitkit/fpga/units/math/math_pack.vhd 2009/02/07.15:52:52 P.20131013
+PH work/math_pack 1544888448 FL C:/Fitkit/fpga/units/math/math_pack.vhd \
+      PB ieee/std_logic_1164 1381692176
+PB work/math_pack 1544888449 \
+      FL C:/Fitkit/fpga/units/math/math_pack.vhd PH work/math_pack 1544888448

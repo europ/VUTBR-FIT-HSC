@@ -1,0 +1,165 @@
+
+# Messages from "go compile"
+
+Completed transformation 'compile' on solution 'filter.v2': elapsed time 3.73 seconds, memory usage 288840kB, peak memory usage 367568kB (SOL-9)
+Completed transformation 'analyze' on solution 'solution.v2': elapsed time 2.55 seconds, memory usage 284136kB, peak memory usage 367068kB (SOL-9)
+Starting transformation 'compile' on solution 'solution.v2' (SOL-8)
+Generating synthesis internal form... (CIN-3)
+Found top design routine 'filter' specified by directive (CIN-52)
+Synthesizing routine 'filter' (CIN-13)
+Inlining routine 'filter' (CIN-14)
+Inlining routine 'pixel_processing' (CIN-14)
+Inlining routine 'system_input' (CIN-14)
+Inlining routine 'buffer' (CIN-14)
+Inlining routine 'shift_window' (CIN-14)
+Inlining routine 'clip_window' (CIN-14)
+Inlining routine 'median' (CIN-14)
+Inlining routine 'thresholding' (CIN-14)
+Optimizing block '/filter' ... (CIN-4)
+Inout port 'in_data' is only used as an input. (OPT-10)
+Inout port 'in_data_vld' is only used as an input. (OPT-10)
+Optimizing partition '/filter': (Total ops = 540, Real ops = 131, Vars = 230) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 540, Real ops = 131, Vars = 226) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 524, Real ops = 102, Vars = 232) (SOL-10)
+Optimizing partition '/filter': (Total ops = 524, Real ops = 102, Vars = 236) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 471, Real ops = 87, Vars = 145) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 459, Real ops = 87, Vars = 149) (SOL-10)
+Optimizing partition '/filter': (Total ops = 459, Real ops = 87, Vars = 153) (SOL-10)
+Splitting object 'L1a:if:mul.sdt#1' into 2 segments (OPT-19)
+Splitting object 'L1a:else:mul.sdt' into 2 segments (OPT-19)
+Splitting object 'L1b:if:mul.sdt#1' into 2 segments (OPT-19)
+Splitting object 'L1b:else:mul.sdt#1' into 2 segments (OPT-19)
+Splitting object 'buffer:sel#1' into 2 segments (OPT-19)
+Splitting object 'pref' into 2 segments (OPT-19)
+Splitting object 'clip_window:iw.idx' into 2 segments (OPT-19)
+Splitting object 'clip_window:first_row' into 2 segments (OPT-19)
+Splitting object 'clip_window:last_row' into 2 segments (OPT-19)
+Splitting object 'clip_window:first_col' into 2 segments (OPT-19)
+Splitting object 'clip_window:last_col' into 2 segments (OPT-19)
+Splitting object 'clip_window:test1' into 2 segments (OPT-19)
+Splitting object 'clip_window:test2' into 2 segments (OPT-19)
+Splitting object 'clip_window:test3' into 2 segments (OPT-19)
+Splitting object 'clip_window:test4' into 2 segments (OPT-19)
+Splitting object 'clip_window:test1.sw' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp:acc.tdx' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp:acc.tdx#1' into 2 segments (OPT-19)
+Splitting object 'clip_window:test2.sw' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#1:acc.tdx#1' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#1:acc.tdx#3' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#1:acc.tdx#5' into 2 segments (OPT-19)
+Splitting object 'clip_window:test3.sw' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#2:acc.tdx#1' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#2:acc.tdx#3' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#2:acc.tdx#5' into 2 segments (OPT-19)
+Splitting object 'clip_window:test4.sw' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#3:acc.tdx#1' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#3:acc.tdx#3' into 2 segments (OPT-19)
+Splitting object 'clip_window:switch-lp#3:acc.tdx#5' into 2 segments (OPT-19)
+Splitting object 'median:window.idx' into 2 segments (OPT-19)
+Splitting object 'pref#1' into 2 segments (OPT-19)
+Splitting object 'Linit:acc.tdx' into 2 segments (OPT-19)
+Splitting object 'pref#2' into 3 segments (OPT-19)
+Splitting object 'pref:pref.pref#2' into 3 segments (OPT-19)
+Splitting object 'pref#3' into 3 segments (OPT-19)
+Splitting object 'pref:pref.pref#3' into 3 segments (OPT-19)
+Splitting object 'pref:pref.pref.pref#1' into 3 segments (OPT-19)
+Splitting object 'pref#4' into 3 segments (OPT-19)
+Splitting object 'pref#6' into 3 segments (OPT-19)
+Splitting object 'pref#8' into 3 segments (OPT-19)
+Splitting object 'pref#10' into 3 segments (OPT-19)
+Splitting object 'pref#12' into 3 segments (OPT-19)
+Splitting object 'pref:pref.pref#8' into 3 segments (OPT-19)
+Splitting object 'pref#13' into 3 segments (OPT-19)
+Splitting object 'pref:pref.pref#9' into 3 segments (OPT-19)
+Splitting object 'pref:pref.pref.pref#2' into 3 segments (OPT-19)
+Splitting object 'pref#14' into 3 segments (OPT-19)
+Splitting object 'pref#16' into 3 segments (OPT-19)
+Splitting object 'pref#18' into 3 segments (OPT-19)
+Splitting object 'pref#20' into 3 segments (OPT-19)
+Splitting object 'pixel_processing:if:if:acc.tdx' into 2 segments (OPT-19)
+Splitting object 'pref:pixel_processing:mcu_data.idx.pref' into 2 segments (OPT-19)
+Splitting object 'thresholding:threshold' into 2 segments (OPT-19)
+Splitting object 'pixel_processing:if:if#1:ac_int:cctor' into 2 segments (OPT-19)
+Splitting object 'L1a:if:slc(pref#4)(3-0).tmp' into 2 segments (OPT-19)
+Splitting object 'L1a:else:slc(pref#8)(3-0).tmp' into 2 segments (OPT-19)
+Splitting object 'L1b:if:slc(pref#16)(3-0).tmp' into 2 segments (OPT-19)
+Splitting object 'L1b:else:slc(pref#20)(3-0).tmp' into 2 segments (OPT-19)
+Optimizing partition '/filter/core': (Total ops = 518, Real ops = 78, Vars = 220) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 695, Real ops = 64, Vars = 42) (SOL-10)
+Optimizing partition '/filter': (Total ops = 695, Real ops = 64, Vars = 46) (SOL-10)
+Splitting object 'thresholding:return' into 2 segments (OPT-19)
+Optimizing partition '/filter/core': (Total ops = 695, Real ops = 64, Vars = 43) (SOL-10)
+Loop '/filter/core/Linit' iterated at most 9 times. (LOOP-2)
+Loop '/filter/core/L1a' iterated at most 5 times. (LOOP-2)
+Loop '/filter/core/L1b' iterated at most 4 times. (LOOP-2)
+Loop '/filter/core/L2' iterated at most 5 times. (LOOP-2)
+Optimizing partition '/filter/core': (Total ops = 437, Real ops = 47, Vars = 56) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 425, Real ops = 44, Vars = 52) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 424, Real ops = 44, Vars = 51) (SOL-10)
+Optimizing partition '/filter': (Total ops = 424, Real ops = 44, Vars = 55) (SOL-10)
+Splitting object 'median:i' into 2 segments (OPT-19)
+Splitting object 'median:j' into 2 segments (OPT-19)
+Splitting object 'median:i#1' into 2 segments (OPT-19)
+Splitting object 'median:i#2' into 2 segments (OPT-19)
+Optimizing partition '/filter/core': (Total ops = 418, Real ops = 44, Vars = 55) (SOL-10)
+Optimizing partition '/filter/core': (Total ops = 418, Real ops = 44, Vars = 51) (SOL-10)
+Optimizing partition '/filter': (Total ops = 418, Real ops = 44, Vars = 55) (SOL-10)
+Design 'filter' was read (SOL-1)
+Makefile for Original Design + Testbench written to file './scverify/Verify_orig_cxx_osci.mk'
+
+# Messages from "go analyze"
+
+solution.v2
+8.0a
+/INPUTFILES/1
+/INPUTFILES/2
+/INPUTFILES/3
+/INPUTFILES/4
+/INPUTFILES/5
+/INPUTFILES/6
+/DESIGN_GOAL area
+/OLD_SCHED false
+/SPECULATE true
+/MERGEABLE true
+/REGISTER_THRESHOLD 256
+/MEM_MAP_THRESHOLD 32
+/FSM_ENCODING none
+/REG_MAX_FANOUT 0
+/NO_X_ASSIGNMENTS true
+/SAFE_FSM false
+/ASSIGN_OVERHEAD 0
+/UNROLL no
+/IO_MODE super
+/REGISTER_IDLE_SIGNAL false
+/IDLE_SIGNAL {}
+/STALL_FLAG false
+/TRANSACTION_DONE_SIGNAL true
+/DONE_FLAG {}
+/READY_FLAG {}
+/START_FLAG {}
+/BLOCK_SYNC none
+/TRANSACTION_SYNC ready
+/DATA_SYNC none
+/CLOCKS {clk {-CLOCK_PERIOD 0.0 -CLOCK_EDGE rising -CLOCK_UNCERTAINTY 0.0 -RESET_SYNC_NAME rst -RESET_ASYNC_NAME arst_n -RESET_KIND sync -RESET_SYNC_ACTIVE high -RESET_ASYNC_ACTIVE low -ENABLE_ACTIVE high}}
+/RESET_CLEARS_ALL_REGS true
+/CLOCK_OVERHEAD 40.000000
+/OPT_CONST_MULTS use_library
+/CHARACTERIZE_ROM false
+/PROTOTYPE_ROM true
+/ROM_THRESHOLD 64
+/CLUSTER_ADDTREE_IN_COUNT_THRESHOLD 0
+/CLUSTER_OPT_CONSTANT_INPUTS true
+/CLUSTER_RTL_SYN false
+/CLUSTER_FAST_MODE false
+/CLUSTER_TYPE combinational
+/COMPGRADE fast
+/DESIGN_HIERARCHY filter__FR31ac_int__tm__17_XCiL_1_3XCbL_1_0RbT1P32ac_int__tm__18_XCiL_2_32XCbL_1_0
+Starting transformation 'analyze' on solution 'solution.v2' (SOL-8)
+Front End called with arguments: -- {C:\Fitkit\apps\vga\segmentace\fpga\src_filter\filter.h} {C:\Fitkit\apps\vga\segmentace\fpga\src_filter\filter.cpp} {C:\Fitkit\apps\vga\segmentace\fpga\src_filter\addr_space.h} (CIN-69)
+Edison Design Group C++/C Front End - Version 4.10.1 (CIN-1)
+Pragma 'hls_design<top>' detected on routine 'filter' (CIN-6)
+Source file analysis completed (CIN-68)
+
+# Messages from "go new"
+
+Branching solution 'solution.v2' at state 'initial' (PRJ-2)

@@ -1,5 +1,0 @@
-# Timing Constraints
-NET "clk" TNM_NET="clk";
-TIMESPEC "TS_clk"=PERIOD "clk" 40.0 ns HIGH 50.0 %;
-# Interface Synthesis Components
-# Assigning clock/reset as defined in 
