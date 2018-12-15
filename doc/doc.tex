@@ -25,6 +25,7 @@
 
 \def\UrlBreaks{\do\/\do-}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\TODO}{\textbf{\textcolor{red}{TODO}}}
 \newcommand{\tilda}{\raisebox{0.5ex}{\texttildelow}}
 \renewcommand{\cftdot}{}
 
@@ -113,6 +114,8 @@ Profilovanie CPU časti projektu bolo vykonané pomocou programu \textit{GNU gpr
 \newpage
 \section{MCU}
 
+Profilovanie MCU bolo vykonané pomocou makra \texttt{\#define PROFILE}. Výsledky sú zobrazené v tabuľke~\ref{tab:process}.
+
 \begin{table}[H]
   \begin{center}
     \begin{tabular}{r|l}
@@ -126,6 +129,8 @@ Profilovanie CPU časti projektu bolo vykonané pomocou programu \textit{GNU gpr
   \end{center}
 \end{table}
 
+Implementácia MCU časti je upravená tak aby spracovala 5 rámcov -- rámce číslo 100, 200, 300, 400, 500. Napriek tomu, že sa spracuje len 5 rámcov, doba spracovania piatich rámcov trvá $70.272 \ s$ ($1min \ 10s \ 272ms$). Kebyže implementácia MCU časti nie je upravená -- spracuje sa každý rámec, tak by spracovanie trvalo $7027.2 \ s$ ($1h \ 57min \ 7s \ 200ms$).
+
 \section{FPGA}
 
 Vlastnosti komponenty pre filtráciu a segmentáciu obrazu:
@@ -136,19 +141,41 @@ Vlastnosti komponenty pre filtráciu a segmentáciu obrazu:
     \item Cyklus označený ako \textit{L2} je rozbalený (unroll enabled)
     \item Cyklus označený ako \textit{L1a} je rozbalený (unroll enabled)
     \item Cyklus označený ako \textit{L1b} je rozbalený (unroll enabled)
+    \item Latencia obvodu je 4
 \end{itemize}
+
+Využitie zdrojov je zobrazené v tabuľke \ref{tab:fpga_resources}.
 
 \begin{table}[H]
   \begin{center}
     \begin{tabular}{l|l}
-        Number of Slice Flip Flops & 492 \hspace{1.65mm} out of 1,536 32\% \\
-        Number of 4 input LUTs     & 1,178 out of 1,536 76\% \\
-        Number of occupied Slices  & 766 \hspace{1.65mm} out of 768 99\%   \\
+        Number of Slice Flip Flops & 492 \hspace{1.65mm} out of 1,536 (32\%) \\
+        Number of 4 input LUTs     & 1,178 out of 1,536 (76\%) \\
+        Number of occupied Slices  & 766 \hspace{1.65mm} out of 768 \hspace{1.65mm} (99\%)   \\
     \end{tabular}
     \caption{Množstvo spotrebovaných zdrojov FPGA čipu.}
     \label{tab:fpga_resources}
   \end{center}
 \end{table}
+
+\section{Porovnanie vlastností SW a SW-HW}
+
+Porovnanie jednotlivých vlastností SW a SW-HW je zobrazené v tabuľke \ref{tab:compare}.
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{r|l|l}
+        & \multicolumn{1}{c|}{\textbf{SW}} & \multicolumn{1}{c}{\textbf{SW-HW}}\\
+        \hline
+        pixel & $183 \ \mu s$ & \TODO\\
+        rámec & $14.0544 \ s$ & \TODO\\
+    \end{tabular}
+    \caption{Spracovanie určitých častí a ich trvanie.}
+    \label{tab:compare}
+  \end{center}
+\end{table}
+
+\section{Zhrnutie}
 
 
 %\newpage
