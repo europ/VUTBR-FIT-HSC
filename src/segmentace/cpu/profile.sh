@@ -10,8 +10,8 @@ GF="--flat-profile --brief" # gprof flags
 NC="\033[0m" # No Color
 RED_B="\033[1;31m" # Bold Red
 RED_R="\033[0;31m" # Regular Red
-GREEN_B="\033[1;32m" # Bold Red
-GREEN_R="\033[0;32m" # Regular Red
+GREEN_B="\033[1;32m" # Bold Green
+GREEN_R="\033[0;32m" # Regular Green
 
 
 # option check
